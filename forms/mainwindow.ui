@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1068</width>
+    <height>566</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>OpenGLDemo</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="MyGL" name="mygl">
+    <property name="geometry">
+     <rect>
+      <x>11</x>
+      <y>11</y>
+      <width>618</width>
+      <height>432</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="Face_list">
+    <property name="geometry">
+     <rect>
+      <x>640</x>
+      <y>10</y>
+      <width>131</width>
+      <height>431</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="HalfEdge_list">
+    <property name="geometry">
+     <rect>
+      <x>780</x>
+      <y>10</y>
+      <width>131</width>
+      <height>431</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="Vertex_list">
+    <property name="geometry">
+     <rect>
+      <x>920</x>
+      <y>10</y>
+      <width>131</width>
+      <height>431</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="face_color_r">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>470</y>
+      <width>51</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <double>1.000000000000000</double>
+    </property>
+    <property name="singleStep">
+     <double>0.200000000000000</double>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="vertex_x">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>470</y>
+      <width>51</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <double>-99.000000000000000</double>
+    </property>
+    <property name="singleStep">
+     <double>0.500000000000000</double>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="face_color_b">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>470</y>
+      <width>51</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <double>1.000000000000000</double>
+    </property>
+    <property name="singleStep">
+     <double>0.200000000000000</double>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="face_color_g">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>470</y>
+      <width>51</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <double>1.000000000000000</double>
+    </property>
+    <property name="singleStep">
+     <double>0.200000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>450</y>
+      <width>111</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Face Color</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>450</y>
+      <width>111</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Vertex Position</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>450</y>
+      <width>60</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Faces</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>930</x>
+      <y>450</y>
+      <width>60</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Vertex</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>790</x>
+      <y>450</y>
+      <width>60</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>HalfEdge</string>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="vertex_y">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>470</y>
+      <width>51</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <double>-99.000000000000000</double>
+    </property>
+    <property name="singleStep">
+     <double>0.500000000000000</double>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="vertex_z">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>470</y>
+      <width>51</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <double>-99.000000000000000</double>
+    </property>
+    <property name="singleStep">
+     <double>0.500000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>500</y>
+      <width>21</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>x</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>500</y>
+      <width>21</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>y</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>500</y>
+      <width>21</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>z</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_9">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>500</y>
+      <width>21</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>r</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_10">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>500</y>
+      <width>21</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>g</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_11">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>500</y>
+      <width>21</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>b</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Addmidpoint">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>470</y>
+      <width>181</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Add Midpoint to Edge</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="triangulate">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>500</y>
+      <width>181</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Triangulate</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1068</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionQuit"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionCamera_Controls"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <action name="actionQuit">
+   <property name="text">
+    <string>Quit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionCamera_Controls">
+   <property name="text">
+    <string>Camera Controls</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>MyGL</class>
+   <extends>QOpenGLWidget</extends>
+   <header>mygl.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
