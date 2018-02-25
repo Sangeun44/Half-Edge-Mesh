@@ -6,7 +6,7 @@
 ShaderProgram::ShaderProgram(GLWidget277 *context)
     : vertShader(), fragShader(), prog(),
       attrPos(-1), attrNor(-1), attrCol(-1),
-      unifModel(-1), unifModelInvTr(-1), unifViewProj(-1), unifColor(-1),
+      unifModel(-1), unifModelInvTr(-1), unifViewProj(-1), unifColor(-1), unifBindMatrices(-1), unifOverallMatrices(-1),
       context(context)
 {}
 
@@ -66,6 +66,8 @@ void ShaderProgram::create(const char *vertfile, const char *fragfile)
     unifModelInvTr = context->glGetUniformLocation(prog, "u_ModelInvTr");
     unifViewProj   = context->glGetUniformLocation(prog, "u_ViewProj");
     unifColor      = context->glGetUniformLocation(prog, "u_Color");
+    unifBindMatrices = context->glGetUniformLocation(prog, "u_BindMats");
+    unifOverallMatrices = context->glGetUniformLocation(prog, "u_OverallMats");
 }
 
 void ShaderProgram::useMe()
@@ -118,6 +120,42 @@ void ShaderProgram::setViewProjMatrix(const glm::mat4 &vp)
                        GL_FALSE,
                     // Pointer to the first element of the matrix
                        &vp[0][0]);
+    }
+}
+
+void ShaderProgram::setBindMats(const std::vector<glm::mat4> &w)
+{
+    // Tell OpenGL to use this shader program for subsequent function calls
+    useMe();
+
+    if(unifBindMatrices != -1) {
+    // Pass a matrix vector into a uniform variable in our shader
+                    // Handle to the matrix variable on the GPU
+    context->glUniformMatrix4fv(unifBindMatrices,
+                    // How many matrices to pass
+                       w.size(),
+                    // Transpose the matrix? OpenGL uses column-major, so no.
+                       GL_FALSE,
+                    // Pointer to the first element of the matrix
+                       &w.data()[0][0][0]);
+    }
+}
+
+void ShaderProgram::setOverallMats(const std::vector<glm::mat4> &w)
+{
+    // Tell OpenGL to use this shader program for subsequent function calls
+    useMe();
+
+    if(unifOverallMatrices != -1) {
+    // Pass a matrix vector into a uniform variable in our shader
+                    // Handle to the matrix variable on the GPU
+    context->glUniformMatrix4fv(unifOverallMatrices,
+                    // How many matrices to pass
+                       w.size(),
+                    // Transpose the matrix? OpenGL uses column-major, so no.
+                       GL_FALSE,
+                    // Pointer to the first element of the matrix
+                       &w.data()[0][0][0]);
     }
 }
 

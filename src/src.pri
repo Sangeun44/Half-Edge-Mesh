@@ -16,7 +16,8 @@ SOURCES += \
     $$PWD/cameracontrolshelp.cpp \
     $$PWD/scene/mesh.cpp \
     $$PWD/scene/components.cpp \
-    $$PWD/scene/drawcomponents.cpp
+    $$PWD/scene/drawcomponents.cpp \
+    $$PWD/scene/joint.cpp
 
 HEADERS += \
     $$PWD/la.h \
@@ -32,4 +33,5 @@ HEADERS += \
     $$PWD/cameracontrolshelp.h \
     $$PWD/scene/mesh.h \
     $$PWD/scene/components.h \
-    $$PWD/scene/drawcomponents.h
+    $$PWD/scene/drawcomponents.h \
+    $$PWD/scene/joint.h

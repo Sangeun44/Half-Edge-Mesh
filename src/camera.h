@@ -39,4 +39,9 @@ public:
     void TranslateAlongLook(float amt);
     void TranslateAlongRight(float amt);
     void TranslateAlongUp(float amt);
+
+    void RotateTheta(float deg); //for the down/upward rotate, up down arrows
+    void RotatePhi(float deg); //for the left/right rotate, left right arrows
+    void Zoom(float amt); //for zooming in WASD
+
 };

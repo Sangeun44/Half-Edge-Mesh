@@ -34,28 +34,28 @@ void DrawVert::create()
 
     generatePos();
     mp_context->glBindBuffer(GL_ARRAY_BUFFER, bufPos);
-    mp_context->glBufferData(GL_ARRAY_BUFFER, count * sizeof(glm::vec4), pos.data(), GL_STATIC_DRAW);
+    mp_context->glBufferData(GL_ARRAY_BUFFER, pos.size() * sizeof(glm::vec4), pos.data(), GL_STATIC_DRAW);
 
     generateCol();
     mp_context->glBindBuffer(GL_ARRAY_BUFFER, bufCol);
-    mp_context->glBufferData(GL_ARRAY_BUFFER, count * sizeof(glm::vec4), col.data(), GL_STATIC_DRAW);
+    mp_context->glBufferData(GL_ARRAY_BUFFER, col.size() * sizeof(glm::vec4), col.data(), GL_STATIC_DRAW);
 
 }
 
-DrawEdge::DrawEdge(GLWidget277 *context): Drawable(context), HE()
+DrawHE::DrawHE(GLWidget277 *context): Drawable(context), HE()
 {}
 
-void DrawEdge::setHE(HalfEdge* he)
+void DrawHE::setHE(HalfEdge* he)
 {
     HE = he;
 }
 
-GLenum DrawEdge::drawMode()
+GLenum DrawHE::drawMode()
 {
     return GL_LINES;
 }
 
-void DrawEdge::create()
+void DrawHE::create()
 {
     glm::vec4 vertPointYellow_pos = glm::vec4(HE->getVert()->getPosition(),1);
     glm::vec4 vertRed_pos = glm::vec4(HE->getSym()->getVert()->getPosition(),1);
@@ -74,11 +74,11 @@ void DrawEdge::create()
 
     generatePos();
     mp_context->glBindBuffer(GL_ARRAY_BUFFER, bufPos);
-    mp_context->glBufferData(GL_ARRAY_BUFFER, count * sizeof(glm::vec4), pos.data(), GL_STATIC_DRAW);
+    mp_context->glBufferData(GL_ARRAY_BUFFER, pos.size() * sizeof(glm::vec4), pos.data(), GL_STATIC_DRAW);
 
     generateCol();
     mp_context->glBindBuffer(GL_ARRAY_BUFFER, bufCol);
-    mp_context->glBufferData(GL_ARRAY_BUFFER, count * sizeof(glm::vec4), col.data(), GL_STATIC_DRAW);
+    mp_context->glBufferData(GL_ARRAY_BUFFER, col.size() * sizeof(glm::vec4), col.data(), GL_STATIC_DRAW);
 
 }
 
@@ -129,10 +129,12 @@ void DrawFace::create()
 
     generatePos();
     mp_context->glBindBuffer(GL_ARRAY_BUFFER, bufPos);
-    mp_context->glBufferData(GL_ARRAY_BUFFER, count * sizeof(glm::vec4), positions.data(), GL_STATIC_DRAW);
+    mp_context->glBufferData(GL_ARRAY_BUFFER, positions.size() * sizeof(glm::vec4), positions.data(), GL_STATIC_DRAW);
 
     generateCol();
     mp_context->glBindBuffer(GL_ARRAY_BUFFER, bufCol);
-    mp_context->glBufferData(GL_ARRAY_BUFFER, count * sizeof(glm::vec3), colors.data(), GL_STATIC_DRAW);
+    mp_context->glBufferData(GL_ARRAY_BUFFER, colors.size() * sizeof(glm::vec3), colors.data(), GL_STATIC_DRAW);
 
 }
+
+

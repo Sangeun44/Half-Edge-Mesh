@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1068</width>
+    <width>1184</width>
     <height>566</height>
    </rect>
   </property>
@@ -17,8 +17,8 @@
    <widget class="MyGL" name="mygl">
     <property name="geometry">
      <rect>
-      <x>11</x>
-      <y>11</y>
+      <x>60</x>
+      <y>20</y>
       <width>618</width>
       <height>432</height>
      </rect>
@@ -27,9 +27,9 @@
    <widget class="QListWidget" name="Face_list">
     <property name="geometry">
      <rect>
-      <x>640</x>
+      <x>690</x>
       <y>10</y>
-      <width>131</width>
+      <width>61</width>
       <height>431</height>
      </rect>
     </property>
@@ -37,9 +37,9 @@
    <widget class="QListWidget" name="HalfEdge_list">
     <property name="geometry">
      <rect>
-      <x>780</x>
+      <x>750</x>
       <y>10</y>
-      <width>131</width>
+      <width>61</width>
       <height>431</height>
      </rect>
     </property>
@@ -47,9 +47,9 @@
    <widget class="QListWidget" name="Vertex_list">
     <property name="geometry">
      <rect>
-      <x>920</x>
+      <x>810</x>
       <y>10</y>
-      <width>131</width>
+      <width>61</width>
       <height>431</height>
      </rect>
     </property>
@@ -122,7 +122,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>450</y>
+      <y>520</y>
       <width>111</width>
       <height>16</height>
      </rect>
@@ -135,7 +135,7 @@
     <property name="geometry">
      <rect>
       <x>170</x>
-      <y>450</y>
+      <y>520</y>
       <width>111</width>
       <height>16</height>
      </rect>
@@ -147,8 +147,8 @@
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>660</x>
-      <y>450</y>
+      <x>690</x>
+      <y>440</y>
       <width>60</width>
       <height>16</height>
      </rect>
@@ -160,8 +160,8 @@
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>930</x>
-      <y>450</y>
+      <x>810</x>
+      <y>440</y>
       <width>60</width>
       <height>16</height>
      </rect>
@@ -173,14 +173,14 @@
    <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
-      <x>790</x>
-      <y>450</y>
+      <x>760</x>
+      <y>440</y>
       <width>60</width>
       <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>HalfEdge</string>
+     <string>HE</string>
     </property>
    </widget>
    <widget class="QDoubleSpinBox" name="vertex_y">
@@ -296,7 +296,7 @@
    <widget class="QPushButton" name="Addmidpoint">
     <property name="geometry">
      <rect>
-      <x>360</x>
+      <x>340</x>
       <y>470</y>
       <width>181</width>
       <height>32</height>
@@ -309,14 +309,185 @@
    <widget class="QPushButton" name="triangulate">
     <property name="geometry">
      <rect>
-      <x>360</x>
-      <y>500</y>
-      <width>181</width>
+      <x>510</x>
+      <y>470</y>
+      <width>101</width>
       <height>32</height>
      </rect>
     </property>
     <property name="text">
      <string>Triangulate</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="subdivide">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>500</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Subdivide</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="extrude">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>500</y>
+      <width>111</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Extrude Face</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="loadobj">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>500</y>
+      <width>111</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Load OBJ</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="json">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>470</y>
+      <width>111</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Load JSON</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_12">
+    <property name="geometry">
+     <rect>
+      <x>880</x>
+      <y>440</y>
+      <width>60</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Joints</string>
+    </property>
+   </widget>
+   <widget class="QTreeWidget" name="joint_list">
+    <property name="geometry">
+     <rect>
+      <x>880</x>
+      <y>10</y>
+      <width>291</width>
+      <height>431</height>
+     </rect>
+    </property>
+    <column>
+     <property name="text">
+      <string notr="true">1</string>
+     </property>
+    </column>
+   </widget>
+   <widget class="QPushButton" name="rotatex">
+    <property name="geometry">
+     <rect>
+      <x>750</x>
+      <y>470</y>
+      <width>81</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>rotate X</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="rotatey">
+    <property name="geometry">
+     <rect>
+      <x>820</x>
+      <y>470</y>
+      <width>81</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>rotate Y</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="rotatez">
+    <property name="geometry">
+     <rect>
+      <x>890</x>
+      <y>470</y>
+      <width>81</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>rotate Z</string>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="currRotateX">
+    <property name="geometry">
+     <rect>
+      <x>770</x>
+      <y>500</y>
+      <width>48</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>1000</number>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="currRotateY">
+    <property name="geometry">
+     <rect>
+      <x>840</x>
+      <y>500</y>
+      <width>48</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>1000</number>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="currRotateZ">
+    <property name="geometry">
+     <rect>
+      <x>910</x>
+      <y>500</y>
+      <width>48</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>1000</number>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="skinMesh">
+    <property name="geometry">
+     <rect>
+      <x>980</x>
+      <y>470</y>
+      <width>111</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Skin Mesh</string>
     </property>
    </widget>
   </widget>
@@ -325,7 +496,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1068</width>
+     <width>1184</width>
      <height>22</height>
     </rect>
    </property>

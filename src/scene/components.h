@@ -2,6 +2,7 @@
 #define COMPONENTS_H
 
 #include "drawable.h"
+#include "joint.h"
 #include <la.h>
 #include <QListWidgetItem>
 #include <QOpenGLContext>
@@ -16,12 +17,13 @@ class Face : public QListWidgetItem
 public:
     Face();
     void setPointTo(HalfEdge* pointTo);
-    void setColor(glm::vec3 color);
+    void setColor(const glm::vec3 color);
     void setID();
+    static void resetID();
 
-    HalfEdge* getPointTo();
-    glm::vec3 getColor();
-    int getID();
+    HalfEdge* getPointTo() const;
+    glm::vec3 getColor() const;
+    int getID() const;
 
     static int id;
 
@@ -41,12 +43,13 @@ public:
     void setFace(Face* in);
     void setVert(Vertex* vertex);
     void setID();
+    static void resetID();
 
-    HalfEdge* getNext();
-    HalfEdge* getSym();
-    Face* getIn();
-    Vertex* getVert();
-    int getID();
+    HalfEdge* getNext() const;
+    HalfEdge* getSym() const;
+    Face* getIn() const;
+    Vertex* getVert() const;
+    int getID() const;
 
     static int id;
 
@@ -64,12 +67,19 @@ class Vertex : public QListWidgetItem
 public:
     Vertex();
     void setPointTo(HalfEdge* pointTo);
-    void setPosition(glm::vec3 pos);
+    void setPosition(const glm::vec3 pos);
+    void setJoints(std::vector<Joint*> joint);
     void setID();
 
-    HalfEdge* getPointTo();
-    glm::vec3 getPosition();
-    int getID();
+    static void resetID();
+
+    HalfEdge* getPointTo() const;
+    glm::vec3 getPosition() const;
+    int getID() const;
+
+    void calculateWeight();
+    std::vector<float> getWeight()const;
+    std::vector<Joint*> getJoints() const;
 
     static int id;
 
@@ -78,6 +88,11 @@ private:
     glm::vec3 pos;
     HalfEdge* pointTo;
     int thisID;
+
+    std::vector<Joint*> joints;
+    float weight1;
+    float weight2;
+
 };
 
 

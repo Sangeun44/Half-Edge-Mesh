@@ -2,8 +2,11 @@
 #define DRAWCOMPONENTS_H
 
 #include "components.h"
+#include "joint.h"
 #include "drawable.h"
+#include <glm/gtx/rotate_vector.hpp>
 #include <la.h>
+#include <glm/gtx/vector_angle.hpp>
 
 #include <QOpenGLContext>
 #include <QOpenGLBuffer>
@@ -23,12 +26,12 @@ public:
 
 };
 
-class DrawEdge : public Drawable
+class DrawHE : public Drawable
 {
 private:
     HalfEdge* HE;
 public:
-    DrawEdge(GLWidget277* mp_context);
+    DrawHE(GLWidget277* mp_context);
 
     void setHE(HalfEdge* he);
     void create();
